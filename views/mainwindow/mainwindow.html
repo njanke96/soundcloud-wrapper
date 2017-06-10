@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SoundCloud Wrapper</title>
+
+        <link rel="stylesheet" href="../../vendor/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./mainwindow.css">
+        <script src="./mainwindow.js"></script>
+    </head>
+    <body>
+        <!-- navigation controls -->
+        <div class="navbar">
+            <div class="page-controls">
+                <i id="btnBack" class="fa fa-arrow-left fa-lg"></i><i id="btnForward" class="fa fa-arrow-right fa-lg"></i><i id="btnRefresh" class="fa fa-refresh fa-lg"></i>
+            </div>
+            <input id="scUrlBox" class="urlbox" readonly>
+        </div>
+
+        <!-- webview -->
+        <webview id="scWebView" src="https://soundcloud.com/" allowpopups></webview>
+
+    </body>
+</html>
