@@ -16,6 +16,7 @@ function spawnWindow() {
         width: 1000,
         height: 600,
         title: 'SoundCloud Wrapper',
+        icon: path.join(__dirname, 'resources/icon/icon.png'),
         center: true
     });
 
