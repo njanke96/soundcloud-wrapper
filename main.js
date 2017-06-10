@@ -30,8 +30,10 @@ function spawnWindow() {
 
     registerMediaKeys();
 
-    // Open the DevTools.
-    //win.webContents.openDevTools()
+    // Open the DevTools
+    if (process.env.NODE_ENV === 'development') {
+        win.webContents.openDevTools();
+    }
 
     win.on('closed', () => {
         win = null;
@@ -39,7 +41,7 @@ function spawnWindow() {
 }
 
 function registerMediaKeys() {
-    var ret = globalShortcut.register('MediaNextTrack', () => {
+    let ret = globalShortcut.register('MediaNextTrack', () => {
         win.webContents.executeJavaScript('onMediaNext();');
     });
 
