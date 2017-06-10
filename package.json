@@ -2,6 +2,8 @@
   "name": "soundcloud-wrapper",
   "description": "Extends media keys to the SoundCloud web app.",
   "version": "0.1.0",
+  "repository": "https://github.com/njanke96/soundcloud-wrapper",
+  "license": "MIT",
   "main": "main.js",
   "scripts": {
     "start": "./node_modules/.bin/electron ."
