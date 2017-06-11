@@ -31,13 +31,14 @@ function spawnWindow() {
 
     registerMediaKeys();
 
-    // Open the DevTools
+    // Open the DevTools in devel env
     if (process.env.NODE_ENV === 'development') {
         win.webContents.openDevTools();
     }
 
     win.on('closed', () => {
-        win = null;
+        // fix for 'windows-all-closed' never firing, luckily also desired behavior
+        app.quit();
     });
 }
 
@@ -70,6 +71,8 @@ function registerMediaKeys() {
 app.on('ready', spawnWindow);
 
 app.on('windows-all-closed', () => {
+    // this never fires... even on windows and linux
+
     // osx support
     if (process.platform !== 'darwin') {
         app.quit();
