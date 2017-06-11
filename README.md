@@ -3,22 +3,24 @@
 A very simple wrapper for soundcloud.com providing media keys support and song
 change notifications.
 
-### How do I use it
+### How do I get it
 
-I might configure build scripts in the future, for now:
+You can download the latest release for your platform [here](https://github.com/njanke96/soundcloud-wrapper/releases).
+
+Or you can build it yourself:
 
 ```
 git clone https://github.com/njanke96/soundcloud-wrapper.git
 cd soundcloud-wrapper
 npm install
-npm start
+npm run build-<win32|darwin|linux>
 ```
 
 ### Can I see a screenshot?
 
 Sure:
 
-![alt text](http://i.imgur.com/yi5MHFS.png)
+<img src="resources/screenshot.png">
 
 ### The app only recognizes one media key press
 
