@@ -1,4 +1,5 @@
 // build.js
+"use strict";
 
 if (!process.argv[2] || !/darwin|linux|win32/.test(process.argv[2])) {
     console.error('Unsupported platform. Use darwin|linux|win32');
@@ -19,7 +20,7 @@ let options = {
 if (plat === 'win32') {
     options.win32metadata = {
         CompanyName: '',
-        FileDescription: 'Extends media keys to the SoundCloud web app.',
+        FileDescription: 'SoundCloud Wrapper',
         OriginalFilename: 'soundcloud-wrapper.exe',
         ProductName: 'SoundCloud Wrapper',
         InternalName: 'soundcloud-wrapper'
