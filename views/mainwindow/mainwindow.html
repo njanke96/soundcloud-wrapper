@@ -10,11 +10,22 @@
     </head>
     <body>
         <!-- navigation controls -->
-        <div class="navbar">
-            <div class="page-controls">
-                <i id="btnBack" class="fa fa-arrow-left fa-lg"></i><i id="btnForward" class="fa fa-arrow-right fa-lg"></i><i id="btnRefresh" class="fa fa-refresh fa-lg"></i>
+        <div class="window-resize-region">
+            <div class="navbar">
+                <div class="page-controls">
+                    <button class="nav-btn"><i id="btnBack" class="fa fa-chevron-left fa-lg"></i></button><!--
+                    --><button class="nav-btn"><i id="btnForward" class="fa fa-chevron-right fa-lg"></i></button><!--
+                    --><button class="nav-btn"><i id="btnRefresh" class="fa fa-refresh fa-lg"></i></button><!--
+                    --><button class="nav-btn"><i id="btnGetUrl" class="fa fa-share-alt fa-lg"></i></button>
+                    <div id="urlCopied" class="tooltiptext">Current URL copied to clipboard.</div>
+                </div>
+                <p class="window-title">SoundCloud Wrapper</p>
+                <div class="window-controls">
+                    <button class="nav-btn"><i id="btnMinimize" class="fa fa-window-minimize fa-1x"></i></button><!--
+                    --><button class="nav-btn"><i id="btnMaximize" class="fa fa-window-maximize fa-1x"></i></button><!--
+                    --><button class="nav-btn"><i id="btnClose" class="fa fa-times fa-lg"></i></button>
+                </div>
             </div>
-            <input id="scUrlBox" class="urlbox" readonly>
         </div>
 
         <!-- webview -->

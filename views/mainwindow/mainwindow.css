@@ -10,6 +10,7 @@ html, body {
 body {
    display: flex;
    flex-flow: column;
+   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
 #scWebView {
@@ -30,7 +31,19 @@ body {
     padding-top: 8px;
     padding-bottom: 8px;
     padding-right: 24px;
+    -webkit-app-region: drag;
+}
+
+.window-resize-region {
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
     border-bottom: 1px solid #fff;
+    background-color: #f50;
+}
+
+button {
+    -webkit-app-region: no-drag;
 }
 
 .page-controls {
@@ -38,23 +51,53 @@ body {
     display: inline;
 }
 
-.page-controls i {
-    margin-left: 8px;
-    margin-right: 8px;
+.window-controls {
+    display: inline;
 }
 
-.page-controls i:hover {
-    color: #f99;
+.nav-btn {
+    display: inline;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: none;
+    outline: none;
+    transition: background-color 250ms linear;
 }
 
-.urlbox {
+.nav-btn:hover {
+    background-color: rgb(216, 80, 0);
+    transition: background-color 250ms linear;
+}
+
+.window-title {
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 16px;
+    margin-right: 16px;
     flex-grow: 1;
     display: inline-block;
     padding: 5px;
-    border: 1px solid #e3e3e3;
-    border-radius: 5px;
     outline: none;
     color: #fff;
-    background-color: rgb(216, 80, 0);
+    text-align: center;
+    -webkit-user-select: none;
+}
+
+.tooltiptext {
+    display: none;
+    background-color: black;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+    user-select: none;
 }

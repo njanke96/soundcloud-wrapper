@@ -17,7 +17,8 @@ function spawnWindow() {
         height: 600,
         title: 'SoundCloud Wrapper',
         icon: path.join(__dirname, 'resources/icon/icon.png'),
-        center: true
+        center: true,
+        frame: false
     });
 
     // disable menu bar (for now)
@@ -32,7 +33,7 @@ function spawnWindow() {
     registerMediaKeys();
 
     // Open the DevTools in devel env
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV !== 'development') {
         win.webContents.openDevTools();
     }
 
