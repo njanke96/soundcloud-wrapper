@@ -33,7 +33,7 @@ function spawnWindow() {
     registerMediaKeys();
 
     // Open the DevTools in devel env
-    if (process.env.NODE_ENV !== 'development') {
+    if (process.env.NODE_ENV === 'development') {
         win.webContents.openDevTools();
     }
 

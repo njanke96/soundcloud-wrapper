@@ -21,7 +21,6 @@ body {
 }
 
 .navbar {
-    flex: 0 1 auto;
     display: flex;
     align-items: center;
     color: #fff;
@@ -35,6 +34,7 @@ body {
 }
 
 .window-resize-region {
+    flex: 0 1 auto;
     padding-left: 2px;
     padding-right: 2px;
     padding-top: 2px;
@@ -74,6 +74,10 @@ button {
 .nav-btn:hover {
     background-color: rgb(216, 80, 0);
     transition: background-color 250ms linear;
+}
+
+.nav-btn i {
+    display: block;
 }
 
 .window-title {
