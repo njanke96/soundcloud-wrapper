@@ -1,6 +1,8 @@
 // mainwindow.js
 const $ = require('jquery');
 const {remote} = require('electron');
+const path = require('path');
+const url = require('url');
 
 const injections = require('../../lib/injections');
 
@@ -51,12 +53,12 @@ onload = () => {
 
     // window control buttons
     $('#btnMinimize').click( () => {
-        var window = remote.getCurrentWindow();
+        let window = remote.getCurrentWindow();
         window.minimize();
     });
 
     $('#btnMaximize').click( () => {
-        var window = remote.getCurrentWindow();
+        let window = remote.getCurrentWindow();
         if (!window.isMaximized()) {
             window.maximize();
         } else {
@@ -65,8 +67,30 @@ onload = () => {
     });
 
     $('#btnClose').click( () => {
-        var window = remote.getCurrentWindow();
+        let window = remote.getCurrentWindow();
         window.close();
+    });
+
+    // info button
+    $('#btnInfo').click( () => {
+        // spawn info dialogue
+        let window = remote.getCurrentWindow();
+        const BrowserWindow = remote.BrowserWindow;
+
+        var win = new BrowserWindow({
+            width: 400,
+            height: 350,
+            parent: window,
+            modal: true,
+            resizable: false
+        });
+
+        win.setMenu(null);
+        win.loadURL(url.format({
+            pathname: path.join(__dirname, '../info/info.html'),
+            protocol: 'file:',
+            slashes: true
+        }));
     });
 }
 

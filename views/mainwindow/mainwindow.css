@@ -49,7 +49,7 @@ button {
 .page-controls {
     flex-shrink: 1;
     display: inline;
-    min-width: 136px;
+    min-width: 172px;
 }
 
 .window-controls {
