@@ -8,6 +8,7 @@ const injections = require('../../lib/injections');
 
 let webview;
 let getUrlEnabled = true;
+let currentUrl = "";
 
 onload = () => {
     webview = document.querySelector('#scWebView');
@@ -17,13 +18,13 @@ onload = () => {
         $('.window-title').text(e.title + ' - SoundCloud Wrapper');
     });
 
-    // update address bar
+    // update current url
     webview.addEventListener('did-navigate', (e) => {
-        $('#scUrlBox').val(e.url);
+        currentUrl = e.url;
     });
 
     webview.addEventListener('did-navigate-in-page', (e) => {
-        $('#scUrlBox').val(e.url);
+        currentUrl = e.url;
     });
 
     // nav buttons
@@ -49,6 +50,8 @@ onload = () => {
             getUrlEnabled = true;
             $('#urlCopied').fadeOut();
         }, 4000);
+
+        require('electron').clipboard.writeText(currentUrl);
     });
 
     // window control buttons
