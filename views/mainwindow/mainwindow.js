@@ -12,7 +12,7 @@ onload = () => {
 
     webview.addEventListener('page-title-updated', (e) => {
         document.title = e.title + ' - SoundCloud Wrapper';
-        $('#windowTitle').text(e.title + ' - SoundCloud Wrapper');
+        $('.window-title').text(e.title + ' - SoundCloud Wrapper');
     });
 
     // update address bar

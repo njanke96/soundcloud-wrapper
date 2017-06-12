@@ -49,10 +49,12 @@ button {
 .page-controls {
     flex-shrink: 1;
     display: inline;
+    min-width: 136px;
 }
 
 .window-controls {
     display: inline;
+    min-width: 101px
 }
 
 .nav-btn {
@@ -92,6 +94,10 @@ button {
     color: #fff;
     text-align: center;
     -webkit-user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px
 }
 
 .tooltiptext {
